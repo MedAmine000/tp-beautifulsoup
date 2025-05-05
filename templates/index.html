@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Articles BDM</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+
+        .article {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+        }
+
+        .image {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recherche d'articles du Blog du Modérateur</h1>
+    <form method="get">
+        Auteur: <input type="text" name="auteur" value="{{ auteur }}">
+        Tag: <input type="text" name="tag" value="{{ tag }}">
+        Date ≥: <input type="date" name="date" value="{{ date }}">
+        <input type="submit" value="Rechercher">
+    </form>
+
+    <h2>{{ articles|length }} article(s) trouvé(s)</h2>
+    {% for a in articles %}
+    <div class="article">
+        <h3><a href="{{ a.url }}" target="_blank">{{ a.title }}</a></h3>
+        <div class="image">
+
+            {% if a.image and 'http' in a.image %}
+            <img src="{{ a.image }}" alt="Image article" width="180" style="border-radius:8px;">
+            {% else %}
+            <p>[Pas d’image]</p>
+            {% endif %}
+
+        </div>
+        <p><strong>Auteur :</strong> {{ a.author or "Inconnu" }}</p>
+        <p><strong>Date :</strong> {{ a.date }}</p>
+        <p><strong>Catégorie :</strong> {{ a.tag or "Non précisé" }}</p>
+        <p>{{ a.summary }}</p>
+        <div class="clear"></div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
