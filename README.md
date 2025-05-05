@@ -28,7 +28,7 @@ Les données sont enrichies (images, auteur, résumé, etc.) et stockées dans u
 ### 1. Cloner le repo
 
 ```bash
-git clone https://github.com/ton-nom-utilisateur/tp-beautifulsoup.git
+git clone https://github.com/MedAmine000/tp-beautifulsoup.git
 cd tp-beautifulsoup
 ```
 
