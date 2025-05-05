@@ -15,6 +15,18 @@ def afficher_resultats(resultats):
         print(f"  Date      : {article.get('date')}")
         print(f"  Résumé    : {article.get('summary')}")
         print(f"  URL       : {article.get('url')}")
+        
+        # Image principale
+        if article.get('image'):
+            print(f"  Image     : {article['image']}")
+        
+        # Liste d'autres images
+        if article.get('images'):
+            print("  Autres images :")
+            for img in article['images']:
+                print(f"    - {img.get('url')} ({img.get('caption', '')})")
+
+    
 
 def rechercher_articles():
     print("=== Recherche d'articles ===")
