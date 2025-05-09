@@ -21,6 +21,11 @@ Les données sont enrichies (images, auteur, résumé, etc.) et stockées dans u
 └── README.md
 ```
 
+
+## 🖥️ Drive Prérequis
+
+- Google Chrome installé
+- [ChromeDriver](https://sites.google.com/chromium.org/driver/) dans `C:/Drivers/chromedriver-win64/`
 ---
 
 ## 🚀 Installation
